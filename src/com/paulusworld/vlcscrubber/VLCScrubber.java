@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.phidgets.Manager;
 import com.phidgets.PhidgetException;
 
 /**
@@ -72,13 +71,11 @@ public class VLCScrubber {
 
 	    LinearTouchPhidgetManager manager = new LinearTouchPhidgetManager(
 		    host, port, password);
-
+	    
 	    while ((line = br.readLine()) != null && !line.equals("quit")) {
 		// Just keep the program running.
 	    }
 
-	    manager.addAttachListener(manager);
-	    manager.addDetachListener(manager);
 	    manager.closeAll();
 	    System.exit(0);
 
